@@ -1,0 +1,60 @@
+.header {
+	height: 100px;
+}
+
+img {
+	width: 100%;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	
+	width: 100%;
+
+	@media (min-width: 800px) {
+		flex-direction: row;
+		justify-content: space-between;
+
+		width: 80%;
+		margin: 40px auto;
+	}
+
+	.main {
+		margin: 15px;
+		line-height: 1.5;
+
+		&::first-letter {
+			font-size: 3rem;
+			font-weight: 800;
+			line-height: 1;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+		}
+
+		@media (min-width: 800px) {
+			width: 50%;
+			height: 200vh;
+			padding: 0 30px;
+			overflow: scroll;
+	
+			min-height: 1000px;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+	
+			&::-webkit-scrollbar {
+				width: 0 !important;
+			}
+		}
+	}
+}
+
+@media (min-width: 800) {
+	.content {
+		flex-direction: row;
+		justify-content: space-between;
+
+		width: 80%;
+		margin: 40px auto;
+	}
+}
