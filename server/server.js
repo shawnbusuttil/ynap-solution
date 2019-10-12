@@ -13,7 +13,7 @@ const app = express();
 const router = express.Router();
 
 const serverRenderedContent = (_req, res, _next) => {
-    fs.readFile(path.resolve('./public/index.html'), 'utf8', (err, data) => {
+    fs.readFile(path.resolve('./build/index.html'), 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             return res.status(500).send('An error occurred!')
@@ -29,7 +29,7 @@ const serverRenderedContent = (_req, res, _next) => {
 router.use('^/$', serverRenderedContent);
 console.log(__dirname);
 router.use(
-    express.static(path.resolve(__dirname, '..', 'public'), { maxAge: '30d' })
+    express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' })
 );
 
 app.use(router);

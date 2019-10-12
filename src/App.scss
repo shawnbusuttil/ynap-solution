@@ -48,13 +48,3 @@ img {
 		}
 	}
 }
-
-@media (min-width: 800) {
-	.content {
-		flex-direction: row;
-		justify-content: space-between;
-
-		width: 80%;
-		margin: 40px auto;
-	}
-}
